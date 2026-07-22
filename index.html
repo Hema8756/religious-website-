@@ -15,11 +15,12 @@
 
 <header class="site-header">
   <div class="top-bar-tools">
-    <button id="themeToggleBtn" class="theme-btn" title="تبديل الثيم">🌙</button>
+    <button id="themeToggleBtn" class="theme-btn" title="تبديل الثيم"><span class="btn-content">🌙</span></button>
+    <button id="developerBtn" class="developer-btn" title="عن المطور"><span class="btn-content">👨‍💻 المطور</span></button>
   </div>
   <div class="arch">
     <div class="arch-inner">
-      <span class="crescent">🌙</span>
+      <span class="crescent">☾</span>
     </div>
   </div>
   <h1 class="site-title">نُورُ الْإِيمَانِ</h1>
@@ -33,7 +34,6 @@
   <button class="tab-btn" data-cat="sleep"><span class="btn-content">النوم</span></button>
   <button class="tab-btn" data-cat="misc"><span class="btn-content">متنوعة</span></button>
   <button class="tab-btn" data-cat="daily"><span class="btn-content">الحياة اليومية</span></button>
-  <button class="tab-btn" data-cat="quran"><span class="btn-content">📖 القرآن الكريم</span></button>
 </nav>
 
 <main id="app">
@@ -67,42 +67,50 @@
 
     <ul class="azkar-list" id="azkarList"></ul>
   </div>
-
-  <!-- قسم القرآن الكريم -->
-  <div id="quranContainer" style="display: none;">
-    <section class="cat-header">
-      <span class="cat-icon">📖</span>
-      <div>
-        <h2>القرآن الكريم</h2>
-        <p class="cat-desc">قراءة وتلاوة صوتية عبر القراء </p>
-      </div>
-    </section>
-
-    <!-- مشغل الصوت وقائمة القراء -->
-    <div class="audio-player-container">
-      <select id="reciterSelect" class="quran-select">
-        <option value="">جاري تحميل القراء...</option>
-      </select>
-      <audio id="quranAudio" controls class="quran-audio-element"></audio>
-    </div>
-
-    <!-- شريط بحث عن سورة -->
-    <input type="text" id="quranSearch" class="quran-search-input" placeholder="ابحث عن اسم السورة..." />
-    
-    <!-- قائمة السور (الفهرس) -->
-    <div id="surahList" class="surah-grid"></div>
-
-    <!-- عرض السورة المختارة -->
-    <div id="surahView" class="surah-view" style="display: none;">
-      <button id="backToSurahList" class="back-btn"><span class="btn-content">← العودة للفهرس</span></button>
-      <div class="surah-title-box">
-        <h2 id="surahTitle" class="surah-title"></h2>
-        <button id="playSurahBtn" class="play-surah-btn"><span class="btn-content">▶ تشغيل الصوت</span></button>
-      </div>
-      <div id="surahContent" class="surah-content"></div>
-    </div>
-  </div>
 </main>
+
+<!-- زر القرآن الكريم العائم -->
+<button id="openQuranFab" class="quran-fab" aria-label="افتح القرآن الكريم">
+  <span class="fab-icon">📖</span>
+  <span class="fab-label">القرآن</span>
+</button>
+
+<!-- درج القرآن الكريم الجانبي -->
+<div class="quran-drawer" id="quranDrawer">
+  <button class="close-modal" id="closeQuranDrawer" aria-label="إغلاق">✕</button>
+
+  <section class="cat-header" style="margin-top: 10px;">
+    <span class="cat-icon">📖</span>
+    <div>
+      <h2>القرآن الكريم</h2>
+      <p class="cat-desc">قراءة وتلاوة صوتية عبر القراء </p>
+    </div>
+  </section>
+
+  <!-- مشغل الصوت وقائمة القراء -->
+  <div class="audio-player-container">
+    <select id="reciterSelect" class="quran-select">
+      <option value="">جاري تحميل القراء...</option>
+    </select>
+    <audio id="quranAudio" controls class="quran-audio-element"></audio>
+  </div>
+
+  <!-- شريط بحث عن سورة -->
+  <input type="text" id="quranSearch" class="quran-search-input" placeholder="ابحث عن اسم السورة..." />
+  
+  <!-- قائمة السور (الفهرس) -->
+  <div id="surahList" class="surah-grid"></div>
+
+  <!-- عرض السورة المختارة -->
+  <div id="surahView" class="surah-view" style="display: none;">
+    <button id="backToSurahList" class="back-btn"><span class="btn-content">← العودة للفهرس</span></button>
+    <div class="surah-title-box">
+      <h2 id="surahTitle" class="surah-title"></h2>
+      <button id="playSurahBtn" class="play-surah-btn"><span class="btn-content">▶ تشغيل الصوت</span></button>
+    </div>
+    <div id="surahContent" class="surah-content"></div>
+  </div>
+</div>
 
 <!-- زر المسبحة العائم -->
 <button id="openTasbih" class="tasbih-fab" aria-label="افتح المسبحة الإلكترونية">
@@ -146,6 +154,33 @@
   </div>
 
   <p class="drag-hint">اسحب الخرزة لأسفل الشاشة أو اضغط عليها للعدّ</p>
+</div>
+
+<!-- الشاشة المنبثقة الخاصة بالمطور -->
+<div class="modal-overlay" id="devModalOverlay">
+  <div class="dev-modal">
+    <button class="close-modal" id="closeDevModal" aria-label="إغلاق">✕</button>
+    <div class="dev-avatar">👨‍💻</div>
+    <h3 class="dev-name">Sung</h3>
+    <p class="dev-bio">
+      مرحبًا أنا برهوم مطوّر مواقع وبوتات واتساب من مصر 🇪🇬  أعمل على تطوير مشاريع تقنية تهدف إلى تقديم تجربة بسيطة سريعة ونافعة وأسأل الله أن يجعل هذا العمل خالصًا لوجهه الكريم.
+    </p>
+    <blockquote class="dev-quran-verse">
+      « وَقُلِ اعْمَلُوا فَسَيَرَى اللَّهُ عَمَلَكُمْ وَرَسُولُهُ وَالْمُؤْمِنُونَ »
+      <span>[التوبة: 105]</span>
+    </blockquote>
+    <div class="dev-social-links">
+      <a href="https://wa.me/+201067668406/?text=السلام+عليكم" target="_blank" class="social-btn whatsapp">
+        <span class="btn-content">💬 واتساب</span>
+      </a>
+      <a href="https://www.instagram.com/x9_sung_7x/profilecard/?igsh=MWcyazRpajhxZG02Zg==" target="_blank" class="social-btn instagram">
+        <span class="btn-content">📸 إنستغرام</span>
+      </a>
+      <a href="https://github.com/Hema8756" target="_blank" class="social-btn github">
+        <span class="btn-content">🌐 GitHub</span>
+      </a>
+    </div>
+  </div>
 </div>
 
 <footer class="site-footer">
