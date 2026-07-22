@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>حصن المسلم والقرآن الكريم — نُورُ الْإِيمَانِ</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Tajawal:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- خلفية زخرفية -->
+<div class="pattern-overlay"></div>
+
+<header class="site-header">
+  <div class="top-bar-tools">
+    <button id="themeToggleBtn" class="theme-btn" title="تبديل الثيم">🌙</button>
+  </div>
+  <div class="arch">
+    <div class="arch-inner">
+      <span class="crescent">🌙</span>
+    </div>
+  </div>
+  <h1 class="site-title">نُورُ الْإِيمَانِ</h1>
+  <p class="site-sub">الأذكار والقرآن الكريم — اذكر الله يذكرك</p>
+</header>
+
+<nav class="tabs" id="tabs">
+  <button class="tab-btn active" data-cat="afterPrayer"><span class="btn-content">بعد الصلاة</span></button>
+  <button class="tab-btn" data-cat="morning"><span class="btn-content">الصباح</span></button>
+  <button class="tab-btn" data-cat="evening"><span class="btn-content">المساء</span></button>
+  <button class="tab-btn" data-cat="sleep"><span class="btn-content">النوم</span></button>
+  <button class="tab-btn" data-cat="misc"><span class="btn-content">متنوعة</span></button>
+  <button class="tab-btn" data-cat="daily"><span class="btn-content">الحياة اليومية</span></button>
+  <button class="tab-btn" data-cat="quran"><span class="btn-content">📖 القرآن الكريم</span></button>
+</nav>
+
+<main id="app">
+  <!-- قسم الأذكار -->
+  <div id="azkarContainer">
+    <section class="cat-header" id="catHeader">
+      <span class="cat-icon" id="catIcon">🕌</span>
+      <div>
+        <h2 id="catTitle">أذكار بعد الصلاة</h2>
+        <p id="catDesc" class="cat-desc"></p>
+      </div>
+      <button class="reset-cat-btn" id="resetCatBtn" title="إعادة ضبط عدّادات هذا القسم"><span class="btn-content">↺ إعادة ضبط</span></button>
+    </section>
+
+    <div class="progress-track">
+      <div class="progress-fill" id="progressFill"></div>
+    </div>
+
+    <!-- أدوات التحكم والبحث -->
+    <div class="azkar-tools">
+      <div class="search-box">
+        <input type="text" id="azkarSearch" class="search-input" placeholder="🔍 ابحث في أذكار هذا القسم..." />
+      </div>
+      <div class="font-controls">
+        <span>حجم الخط:</span>
+        <button id="decFontBtn" class="font-btn" title="تصغير الخط"><span class="btn-content">A-</span></button>
+        <button id="resetFontBtn" class="font-btn" title="إعادة ضبط الخط"><span class="btn-content">إعادة</span></button>
+        <button id="incFontBtn" class="font-btn" title="تكبير الخط"><span class="btn-content">A+</span></button>
+      </div>
+    </div>
+
+    <ul class="azkar-list" id="azkarList"></ul>
+  </div>
+
+  <!-- قسم القرآن الكريم -->
+  <div id="quranContainer" style="display: none;">
+    <section class="cat-header">
+      <span class="cat-icon">📖</span>
+      <div>
+        <h2>القرآن الكريم</h2>
+        <p class="cat-desc">قراءة وتلاوة صوتية عبر القراء </p>
+      </div>
+    </section>
+
+    <!-- مشغل الصوت وقائمة القراء -->
+    <div class="audio-player-container">
+      <select id="reciterSelect" class="quran-select">
+        <option value="">جاري تحميل القراء...</option>
+      </select>
+      <audio id="quranAudio" controls class="quran-audio-element"></audio>
+    </div>
+
+    <!-- شريط بحث عن سورة -->
+    <input type="text" id="quranSearch" class="quran-search-input" placeholder="ابحث عن اسم السورة..." />
+    
+    <!-- قائمة السور (الفهرس) -->
+    <div id="surahList" class="surah-grid"></div>
+
+    <!-- عرض السورة المختارة -->
+    <div id="surahView" class="surah-view" style="display: none;">
+      <button id="backToSurahList" class="back-btn"><span class="btn-content">← العودة للفهرس</span></button>
+      <div class="surah-title-box">
+        <h2 id="surahTitle" class="surah-title"></h2>
+        <button id="playSurahBtn" class="play-surah-btn"><span class="btn-content">▶ تشغيل الصوت</span></button>
+      </div>
+      <div id="surahContent" class="surah-content"></div>
+    </div>
+  </div>
+</main>
+
+<!-- زر المسبحة العائم -->
+<button id="openTasbih" class="tasbih-fab" aria-label="افتح المسبحة الإلكترونية">
+  <span class="fab-beads">۝</span>
+  <span class="fab-label">المسبحة</span>
+</button>
+
+<!-- درج المسبحة الجانبي -->
+<div class="tasbih-drawer" id="tasbihOverlay">
+  <button class="close-modal" id="closeTasbih" aria-label="إغلاق">✕</button>
+
+  <div class="drawer-top">
+    <h3>المسبحة الإلكترونية</h3>
+    <div class="dhikr-select" id="dhikrSelect">
+      <button class="dhikr-chip active" data-text="سُبْحَانَ اللَّهِ"><span class="btn-content">سبحان الله</span></button>
+      <button class="dhikr-chip" data-text="الْحَمْدُ لِلَّهِ"><span class="btn-content">الحمد لله</span></button>
+      <button class="dhikr-chip" data-text="اللَّهُ أَكْبَرُ"><span class="btn-content">الله أكبر</span></button>
+      <button class="dhikr-chip" data-text="لَا إِلَهَ إِلَّا اللَّهُ"><span class="btn-content">لا إله إلا الله</span></button>
+      <button class="dhikr-chip" data-text="أَسْتَغْفِرُ اللَّهَ"><span class="btn-content">أستغفر الله</span></button>
+    </div>
+    <p class="current-dhikr" id="currentDhikrText">سُبْحَانَ اللَّهِ</p>
+
+    <div class="counter-ring">
+      <svg viewBox="0 0 120 120" class="ring-svg">
+        <circle cx="60" cy="60" r="52" class="ring-bg"/>
+        <circle cx="60" cy="60" r="52" class="ring-fg" id="ringFg"/>
+      </svg>
+      <div class="counter-number" id="counterNumber">0</div>
+    </div>
+    <p class="counter-round" id="counterRound">الدورة: 1</p>
+    <div class="counter-actions">
+      <button id="counterMinus" title="إنقاص"><span class="btn-content">−</span></button>
+      <button id="counterReset" title="إعادة ضبط"><span class="btn-content">↺</span></button>
+    </div>
+  </div>
+
+  <div class="beads-track" id="beadsTrack">
+    <div class="beads-string"></div>
+    <div class="bead drag-bead" id="dragBead"></div>
+    <div class="bead-tassel"></div>
+  </div>
+
+  <p class="drag-hint">اسحب الخرزة لأسفل الشاشة أو اضغط عليها للعدّ</p>
+</div>
+
+<footer class="site-footer">
+  <p>«الَّذِينَ آمَنُوا وَتَطْمَئِنُّ قُلُوبُهُم بِذِكْرِ اللَّهِ ۗ أَلَا بِذِكْرِ اللَّهِ تَطْمَئِنُّ الْقُلُوبُ»</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
