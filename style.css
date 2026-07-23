@@ -1,3 +1,8 @@
+/* إلغاء التظليل الأزرق عند الضغط على الأزرار في الموبايل */
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
 /* ============ Design Tokens (Glassmorphism Theme) ============ */
 :root {
   --bg-dark-1: #0A0F1D;
