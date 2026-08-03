@@ -5,7 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>حصن المسلم والقرآن الكريم — نُورُ الْإِيمَانِ</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Tajawal:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Tajawal:wght@300;400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -15,23 +16,12 @@
 
 <header class="site-header">
   <div class="top-bar-tools">
-    <button id="themeToggleBtn" class="theme-btn" title="تبديل الثيم">
-      <span class="btn-content">
-        <svg class="svg-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
-      </span>
-    </button>
-    <button id="developerBtn" class="developer-btn" title="عن المطور">
-      <span class="btn-content">
-        <svg class="svg-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
-        المطور
-      </span>
-    </button>
+    <button id="themeToggleBtn" class="theme-btn" title="تبديل الثيم"><span class="btn-content">🌙</span></button>
+    <button id="developerBtn" class="developer-btn" title="عن المطور"><span class="btn-content">👨‍💻 المطور</span></button>
   </div>
   <div class="arch">
     <div class="arch-inner">
-      <span class="crescent">
-        <svg viewBox="0 0 24 24" width="36" height="36" fill="currentColor"><path d="M12 3a9 9 0 1 0 9 9c0-.46-.04-.92-.1-1.36a5.389 5.389 0 0 1-4.4 2.26 5.403 5.403 0 0 1-5.4-5.4c0-1.81.89-3.42 2.26-4.4C12.92 3.04 12.46 3 12 3z"/></svg>
-      </span>
+      <span class="crescent">☾</span>
     </div>
   </div>
   <h1 class="site-title">نُورُ الْإِيمَانِ</h1>
@@ -51,19 +41,12 @@
   <!-- قسم الأذكار -->
   <div id="azkarContainer">
     <section class="cat-header" id="catHeader">
-      <span class="cat-icon" id="catIcon">
-        <svg class="svg-icon" viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18M5 21V10l7-5 7 5v11M9 21v-4a3 3 0 0 1 6 0v4"/></svg>
-      </span>
+      <span class="cat-icon" id="catIcon">🕌</span>
       <div>
         <h2 id="catTitle">أذكار بعد الصلاة</h2>
         <p id="catDesc" class="cat-desc"></p>
       </div>
-      <button class="reset-cat-btn" id="resetCatBtn" title="إعادة ضبط عدّادات هذا القسم">
-        <span class="btn-content">
-          <svg class="svg-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 4 23 10 17 10"></polyline><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"></path></svg>
-          إعادة ضبط
-        </span>
-      </button>
+      <button class="reset-cat-btn" id="resetCatBtn" title="إعادة ضبط عدّادات هذا القسم"><span class="btn-content">↺ إعادة ضبط</span></button>
     </section>
 
     <div class="progress-track">
@@ -73,7 +56,7 @@
     <!-- أدوات التحكم والبحث -->
     <div class="azkar-tools">
       <div class="search-box">
-        <input type="text" id="azkarSearch" class="search-input" placeholder="ابحث في أذكار هذا القسم..." />
+        <input type="text" id="azkarSearch" class="search-input" placeholder="🔍 ابحث في أذكار هذا القسم..." />
       </div>
       <div class="font-controls">
         <span>حجم الخط:</span>
@@ -89,9 +72,7 @@
 
 <!-- زر القرآن الكريم العائم -->
 <button id="openQuranFab" class="quran-fab" aria-label="افتح القرآن الكريم">
-  <span class="fab-icon">
-    <svg class="svg-icon" viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
-  </span>
+  <span class="fab-icon">📖</span>
   <span class="fab-label">القرآن</span>
 </button>
 
@@ -100,15 +81,14 @@
   <button class="close-modal" id="closeQuranDrawer" aria-label="إغلاق">✕</button>
 
   <section class="cat-header" style="margin-top: 10px;">
-    <span class="cat-icon">
-      <svg class="svg-icon" viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
-    </span>
+    <span class="cat-icon">📖</span>
     <div>
       <h2>القرآن الكريم</h2>
       <p class="cat-desc">قراءة وتلاوة صوتية عبر القراء </p>
     </div>
   </section>
 
+  <!-- مشغل الصوت وقائمة القراء -->
   <div class="audio-player-container">
     <select id="reciterSelect" class="quran-select">
       <option value="">جاري تحميل القراء...</option>
@@ -116,20 +96,18 @@
     <audio id="quranAudio" controls class="quran-audio-element"></audio>
   </div>
 
+  <!-- شريط بحث عن سورة -->
   <input type="text" id="quranSearch" class="quran-search-input" placeholder="ابحث عن اسم السورة..." />
   
+  <!-- قائمة السور (الفهرس) -->
   <div id="surahList" class="surah-grid"></div>
 
+  <!-- عرض السورة المختارة -->
   <div id="surahView" class="surah-view" style="display: none;">
     <button id="backToSurahList" class="back-btn"><span class="btn-content">← العودة للفهرس</span></button>
     <div class="surah-title-box">
       <h2 id="surahTitle" class="surah-title"></h2>
-      <button id="playSurahBtn" class="play-surah-btn">
-        <span class="btn-content">
-          <svg class="svg-icon" viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
-          تشغيل الصوت
-        </span>
-      </button>
+      <button id="playSurahBtn" class="play-surah-btn"><span class="btn-content">▶ تشغيل الصوت</span></button>
     </div>
     <div id="surahContent" class="surah-content"></div>
   </div>
@@ -137,9 +115,7 @@
 
 <!-- زر المسبحة العائم -->
 <button id="openTasbih" class="tasbih-fab" aria-label="افتح المسبحة الإلكترونية">
-  <span class="fab-beads">
-    <svg class="svg-icon" viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"></circle><circle cx="12" cy="12" r="3"></circle></svg>
-  </span>
+  <span class="fab-beads">۝</span>
   <span class="fab-label">المسبحة</span>
 </button>
 
@@ -185,9 +161,7 @@
 <div class="modal-overlay" id="devModalOverlay">
   <div class="dev-modal">
     <button class="close-modal" id="closeDevModal" aria-label="إغلاق">✕</button>
-    <div class="dev-avatar">
-      <svg class="svg-icon" viewBox="0 0 24 24" width="56" height="56" fill="none" stroke="var(--neon-blue)" stroke-width="1.5"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
-    </div>
+    <div class="dev-avatar">👨‍💻</div>
     <h3 class="dev-name">Sung</h3>
     <p class="dev-bio">
       مرحبًا أنا برهوم مطوّر مواقع وبوتات واتساب من مصر 🇪🇬  أعمل على تطوير مشاريع تقنية تهدف إلى تقديم تجربة بسيطة سريعة ونافعة وأسأل الله أن يجعل هذا العمل خالصًا لوجهه الكريم.

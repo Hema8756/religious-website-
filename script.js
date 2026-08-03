@@ -4,7 +4,7 @@
 const azkarData = {
   afterPrayer: {
     title: "أذكار بعد الصلاة",
-    iconSVG: `<svg class="svg-icon" viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18M5 21V10l7-5 7 5v11M9 21v-4a3 3 0 0 1 6 0v4"/></svg>`,
+    icon: "🕌",
     desc: "تُقال عقب كل صلاة مكتوبة ",
     items: [
       { text: "أَسْتَغْفِرُ اللَّهَ، أَسْتَغْفِرُ اللَّهَ، أَسْتَغْفِرُ اللَّهَ", count: 3 },
@@ -24,7 +24,7 @@ const azkarData = {
   },
   morning: {
     title: "أذكار الصباح",
-    iconSVG: `<svg class="svg-icon" viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>`,
+    icon: "☀️",
     desc: "من بعد صلاة الفجر إلى شروق الشمس ",
     items: [
       { text: "أَصْبَحْنَا وَأَصْبَحَ الْمُلْكُ لِلَّهِ، وَالْحَمْدُ لِلَّهِ، لَا إِلَهَ إِلَّا اللَّهُ وَحْدَهُ لَا شَرِيكَ لَهُ، لَهُ الْمُلْكُ وَلَهُ الْحَمْدُ وَهُوَ عَلَى كُلِّ شَيْءٍ قَدِيرٌ، رَبِّ أَسْأَلُكَ خَيْرَ مَا فِي هَذَا الْيَوْمِ وَخَيْرَ مَا بَعْدَهُ، وَأَعُوذُ بِكَ مِنْ شَرِّ مَا فِي هَذَا الْيَوْمِ وَشَرِّ مَا بَعْدَهُ، رَبِّ أَعُوذُ بِكَ مِنَ الْكَسَلِ وَسُوءِ الْكِبَرِ، رَبِّ أَعُوذُ بِكَ مِنْ عَذَابٍ فِي النَّارِ وَعَذَابٍ فِي الْقَبْرِ", count: 1 },
@@ -48,7 +48,7 @@ const azkarData = {
   },
   evening: {
     title: "أذكار المساء",
-    iconSVG: `<svg class="svg-icon" viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>`,
+    icon: "🌙",
     desc: "من بعد صلاة العصر إلى غروب الشمس ",
     items: [
       { text: "أَمْسَيْنَا وَأَمْسَى الْمُلْكُ لِلَّهِ، وَالْحَمْدُ لِلَّهِ، لَا إِلَهَ إِلَّا اللَّهُ وَحْدَهُ لَا شَرِيكَ لَهُ، لَهُ الْمُلْكُ وَلَهُ الْحَمْدُ وَهُوَ عَلَى كُلِّ شَيْءٍ قَدِيرٌ، رَبِّ أَسْأَلُكَ خَيْرَ مَا فِي هَذِهِ اللَّيْلَةِ وَخَيْرَ مَا بَعْدَهَا، وَأَعُوذُ بِكَ مِنْ شَرِّ مَا فِي هَذِهِ اللَّيْلَةِ وَشَرِّ مَا بَعْدَهَا", count: 1 },
@@ -72,8 +72,8 @@ const azkarData = {
   },
   sleep: {
     title: "أذكار النوم",
-    iconSVG: `<svg class="svg-icon" viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>`,
-    desc: "تُقال عند النوم ",
+    icon: "🌟",
+    desc: "تُقال عند  النوم ",
     items: [
       { text: "بِاسْمِكَ اللَّهُمَّ أَمُوتُ وَأَحْيَا", count: 1 },
       { text: "اللَّهُمَّ أَسْلَمْتُ نَفْسِي إِلَيْكَ، وَفَوَّضْتُ أَمْرِي إِلَيْكَ، وَوَجَّهْتُ وَجْهِي إِلَيْكَ، وَأَلْجَأْتُ ظَهْرِي إِلَيْكَ، رَغْبَةً وَرَهْبَةً إِلَيْكَ، لَا مَلْجَأَ وَلَا مَنْجَا مِنْكَ إِلَّا إِلَيْكَ، آمَنْتُ بِكِتَابِكَ الَّذِي أَنْزَلْتَ، وَبِنَبِيِّكَ الَّذِي أَرْسَلْتَ", count: 1 },
@@ -95,7 +95,7 @@ const azkarData = {
   },
   misc: {
     title: "أذكار متنوعة",
-    iconSVG: `<svg class="svg-icon" viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 17.58A5 5 0 0 0 18 8h-1.26A8 8 0 1 0 4 16.25"/></svg>`,
+    icon: "🌧️",
     desc: "أدعية لمواقف ومناسبات الحياة اليومية ",
     items: [
       { text: "عند الخروج: بِسْمِ اللَّهِ، تَوَكَّلْتُ عَلَى اللَّهِ، وَلَا حَوْلَ وَلَا قُوَّةَ إِلَّا بِاللَّهِ. وعند الدخول: بِسْمِ اللَّهِ وَلَجْنَا، وَبِسْمِ اللَّهِ خَرَجْنَا، وَعَلَى اللَّهِ رَبِّنَا تَوَكَّلْنَا", count: 1, fadl: "دعاء دخول المنزل والخروج منه — ثم ليُسلِّم على أهله عند الدخول" },
@@ -117,7 +117,7 @@ const azkarData = {
   },
   daily: {
     title: "أذكار الحياة اليومية",
-    iconSVG: `<svg class="svg-icon" viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>`,
+    icon: "🏠",
     desc: "أذكار إضافية من حصن المسلم لم تكن مضافة بعد",
     items: [
       { text: "الْحَمْدُ لِلَّهِ الَّذِي أَحْيَانَا بَعْدَ مَا أَمَاتَنَا وَإِلَيْهِ النُّشُورُ", count: 1, fadl: "أذكار الاستيقاظ من النوم" },
@@ -168,6 +168,7 @@ function initTheme() {
   const savedTheme = localStorage.getItem("site_theme") || "dark";
   if (savedTheme === "light") {
     document.body.classList.add("light-theme");
+    if (themeToggleBtn) themeToggleBtn.querySelector('.btn-content').textContent = "☀️";
   }
 }
 if (themeToggleBtn) {
@@ -175,6 +176,7 @@ if (themeToggleBtn) {
     document.body.classList.toggle("light-theme");
     const isLight = document.body.classList.contains("light-theme");
     localStorage.setItem("site_theme", isLight ? "light" : "dark");
+    themeToggleBtn.querySelector('.btn-content').textContent = isLight ? "☀️" : "🌙";
   });
 }
 initTheme();
@@ -219,11 +221,9 @@ function renderCategory(cat) {
   const data = azkarData[cat];
   catTitle.textContent = data.title;
   catDesc.textContent = data.desc;
-  catIcon.innerHTML = data.iconSVG;
+  catIcon.textContent = data.icon;
   azkarList.innerHTML = "";
 
-  // Lazy Render optimization for Azkar list
-  const fragment = document.createDocumentFragment();
   data.items.forEach((item, idx) => {
     const done = getItemProgress(cat, idx);
     const li = document.createElement("li");
@@ -240,15 +240,14 @@ function renderCategory(cat) {
             <span class="btn-content">عدّ الذكر <span class="count-badge">${done} / ${item.count}</span></span>
           </button>
           <button class="copy-btn" data-idx="${idx}" title="نسخ الذكر">
-            <span class="btn-content">نسخ</span>
+            <span class="btn-content">📋 نسخ</span>
           </button>
         </div>
         <div class="mini-beads">${renderMiniBeads(item.count, done)}</div>
       </div>
     `;
-    fragment.appendChild(li);
+    azkarList.appendChild(li);
   });
-  azkarList.appendChild(fragment);
 
   updateProgressBar();
 }
@@ -277,18 +276,18 @@ function updateProgressBar() {
 
 // البحث في الأذكار
 if (azkarSearch) {
+  let searchDebounce;
   azkarSearch.addEventListener("input", (e) => {
+    clearTimeout(searchDebounce);
     const q = e.target.value.trim().toLowerCase();
-    const cards = document.querySelectorAll(".zikr-card");
-    cards.forEach((card) => {
-      const text = card.querySelector(".zikr-text")?.textContent.toLowerCase() || "";
-      const fadl = card.querySelector(".zikr-fadl")?.textContent.toLowerCase() || "";
-      if (text.includes(q) || fadl.includes(q)) {
-        card.style.display = "block";
-      } else {
-        card.style.display = "none";
-      }
-    });
+    searchDebounce = setTimeout(() => {
+      const cards = document.querySelectorAll(".zikr-card");
+      cards.forEach((card) => {
+        const text = card.querySelector(".zikr-text")?.textContent.toLowerCase() || "";
+        const fadl = card.querySelector(".zikr-fadl")?.textContent.toLowerCase() || "";
+        card.style.display = (text.includes(q) || fadl.includes(q)) ? "block" : "none";
+      });
+    }, 150);
   });
 }
 
@@ -301,6 +300,16 @@ document.getElementById("resetCatBtn")?.addEventListener("click", () => {
   }
 });
 
+function updateCardUI(idx, item, done) {
+  const li = azkarList.querySelector(`li[data-idx="${idx}"]`);
+  if (!li) return;
+  li.classList.toggle("done", done >= item.count);
+  const badge = li.querySelector(".count-badge");
+  if (badge) badge.textContent = `${done} / ${item.count}`;
+  const beadsWrap = li.querySelector(".mini-beads");
+  if (beadsWrap) beadsWrap.innerHTML = renderMiniBeads(item.count, done);
+}
+
 azkarList.addEventListener("click", (e) => {
   const btn = e.target.closest(".count-btn");
   if (btn) {
@@ -310,7 +319,10 @@ azkarList.addEventListener("click", (e) => {
     done = done >= item.count ? 0 : done + 1;
     setItemProgress(currentCat, idx, done);
     if (navigator.vibrate) navigator.vibrate(15);
-    renderCategory(currentCat);
+    // Only the tapped card + progress bar are updated - rebuilding the entire
+    // list (15-20+ cards) on every single tap was the main cause of lag.
+    updateCardUI(idx, item, done);
+    updateProgressBar();
     return;
   }
 
@@ -322,7 +334,7 @@ azkarList.addEventListener("click", (e) => {
     navigator.clipboard.writeText(textToCopy).then(() => {
       copyBtn.querySelector('.btn-content').innerHTML = "✓ تم النسخ";
       copyBtn.classList.add("copied");
-      setTimeout(() => { copyBtn.querySelector('.btn-content').innerHTML = "نسخ"; copyBtn.classList.remove("copied"); }, 1500);
+      setTimeout(() => { copyBtn.querySelector('.btn-content').innerHTML = "📋 نسخ"; copyBtn.classList.remove("copied"); }, 1500);
     });
   }
 });
@@ -387,13 +399,9 @@ async function fetchSurahs() {
   }
 }
 
-// Lazy Load Renderer for Surah Cards
 function renderSurahList(surahs) {
   const container = document.getElementById("surahList");
   container.innerHTML = "";
-  
-  const fragment = document.createDocumentFragment();
-
   surahs.forEach((surah) => {
     const card = document.createElement("div");
     card.className = "surah-card card";
@@ -405,10 +413,8 @@ function renderSurahList(surahs) {
       </div>
     `;
     card.addEventListener("click", () => loadSurahContent(surah.number, surah.name));
-    fragment.appendChild(card);
+    container.appendChild(card);
   });
-
-  container.appendChild(fragment);
 }
 
 async function loadSurahContent(surahNum, surahName) {
