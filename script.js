@@ -4,7 +4,7 @@
 const azkarData = {
   afterPrayer: {
     title: "أذكار بعد الصلاة",
-    icon: "🕌",
+    icon: `<svg class="icon-svg lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path></svg>`,
     desc: "تُقال عقب كل صلاة مكتوبة ",
     items: [
       { text: "أَسْتَغْفِرُ اللَّهَ، أَسْتَغْفِرُ اللَّهَ، أَسْتَغْفِرُ اللَّهَ", count: 3 },
@@ -24,7 +24,7 @@ const azkarData = {
   },
   morning: {
     title: "أذكار الصباح",
-    icon: "☀️",
+    icon: `<svg class="icon-svg lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>`,
     desc: "من بعد صلاة الفجر إلى شروق الشمس ",
     items: [
       { text: "أَصْبَحْنَا وَأَصْبَحَ الْمُلْكُ لِلَّهِ، وَالْحَمْدُ لِلَّهِ، لَا إِلَهَ إِلَّا اللَّهُ وَحْدَهُ لَا شَرِيكَ لَهُ، لَهُ الْمُلْكُ وَلَهُ الْحَمْدُ وَهُوَ عَلَى كُلِّ شَيْءٍ قَدِيرٌ، رَبِّ أَسْأَلُكَ خَيْرَ مَا فِي هَذَا الْيَوْمِ وَخَيْرَ مَا بَعْدَهُ، وَأَعُوذُ بِكَ مِنْ شَرِّ مَا فِي هَذَا الْيَوْمِ وَشَرِّ مَا بَعْدَهُ، رَبِّ أَعُوذُ بِكَ مِنَ الْكَسَلِ وَسُوءِ الْكِبَرِ، رَبِّ أَعُوذُ بِكَ مِنْ عَذَابٍ فِي النَّارِ وَعَذَابٍ فِي الْقَبْرِ", count: 1 },
@@ -48,7 +48,7 @@ const azkarData = {
   },
   evening: {
     title: "أذكار المساء",
-    icon: "🌙",
+    icon: `<svg class="icon-svg lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>`,
     desc: "من بعد صلاة العصر إلى غروب الشمس ",
     items: [
       { text: "أَمْسَيْنَا وَأَمْسَى الْمُلْكُ لِلَّهِ، وَالْحَمْدُ لِلَّهِ، لَا إِلَهَ إِلَّا اللَّهُ وَحْدَهُ لَا شَرِيكَ لَهُ، لَهُ الْمُلْكُ وَلَهُ الْحَمْدُ وَهُوَ عَلَى كُلِّ شَيْءٍ قَدِيرٌ، رَبِّ أَسْأَلُكَ خَيْرَ مَا فِي هَذِهِ اللَّيْلَةِ وَخَيْرَ مَا بَعْدَهَا، وَأَعُوذُ بِكَ مِنْ شَرِّ مَا فِي هَذِهِ اللَّيْلَةِ وَشَرِّ مَا بَعْدَهَا", count: 1 },
@@ -72,7 +72,7 @@ const azkarData = {
   },
   sleep: {
     title: "أذكار النوم",
-    icon: "🌟",
+    icon: `<svg class="icon-svg lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>`,
     desc: "تُقال عند  النوم ",
     items: [
       { text: "بِاسْمِكَ اللَّهُمَّ أَمُوتُ وَأَحْيَا", count: 1 },
@@ -95,7 +95,7 @@ const azkarData = {
   },
   misc: {
     title: "أذكار متنوعة",
-    icon: "🌧️",
+    icon: `<svg class="icon-svg lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 16.2A4.5 4.5 0 0 0 17.5 8h-1.8A7 7 0 1 0 2 14.9"></path><path d="M16 14v6"></path><path d="M8 14v6"></path><path d="M12 16v6"></path></svg>`,
     desc: "أدعية لمواقف ومناسبات الحياة اليومية ",
     items: [
       { text: "عند الخروج: بِسْمِ اللَّهِ، تَوَكَّلْتُ عَلَى اللَّهِ، وَلَا حَوْلَ وَلَا قُوَّةَ إِلَّا بِاللَّهِ. وعند الدخول: بِسْمِ اللَّهِ وَلَجْنَا، وَبِسْمِ اللَّهِ خَرَجْنَا، وَعَلَى اللَّهِ رَبِّنَا تَوَكَّلْنَا", count: 1, fadl: "دعاء دخول المنزل والخروج منه — ثم ليُسلِّم على أهله عند الدخول" },
@@ -117,7 +117,7 @@ const azkarData = {
   },
   daily: {
     title: "أذكار الحياة اليومية",
-    icon: "🏠",
+    icon: `<svg class="icon-svg lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>`,
     desc: "أذكار إضافية من حصن المسلم لم تكن مضافة بعد",
     items: [
       { text: "الْحَمْدُ لِلَّهِ الَّذِي أَحْيَانَا بَعْدَ مَا أَمَاتَنَا وَإِلَيْهِ النُّشُورُ", count: 1, fadl: "أذكار الاستيقاظ من النوم" },
@@ -125,14 +125,14 @@ const azkarData = {
       { text: "بِسْمِ اللَّهِ، اللَّهُمَّ إِنِّي أَعُوذُ بِكَ مِنَ الْخُبْثِ وَالْخَبَائِثِ", count: 1, fadl: "دعاء دخول الخلاء (الحمّام)" },
       { text: "غُفْرَانَكَ", count: 1, fadl: "دعاء الخروج من الخلاء (الحمّام)" },
       { text: "بِسْمِ اللَّهِ", count: 1, fadl: "الذكر قبل الوضوء" },
-      { text: "أَشْهَدُ أَنْ لَا إِلَهَ إِلَّا اللَّهُ وَحْدَهُ لَا شَرِيكَ لَهُ، وَأَشْهَدُ أَنَّ مُحَمَّدًا عَبْدُهُ وَرَسُولُهُ. اللَّهُمَّ اجْعَلْنِي مِنَ التَّوَّابِينَ وَاجْعَلْنِي مِنَ الْمُتَطَهِّرِينَ. سُبْحَانَكَ اللَّهُمَّ وَبِحَمْدِكَ، أَشْهَدُ أَنْ لَا إِلَهَ إِلَّا أَنْتَ، أَسْتَغْفِرُكَ وَأَتُوبُ إِلَيْكَ", count: 1, fadl: "الذكر بعد الفراغ من الوضوء" },
+      { text: "أَشْهَدُ أَنْ لَا إِلَهَ إِلَّا اللَّهُ وَحْدَهُ لَا شَرِيكَ لَهُ، وَأَشْهَدُ أَنَّ مُحَمَّدًا عَبْدُهُ وَرَسُولُهُ. اللَّهُمَّ اجْعَلْنِي مِنَ التَّوَّابِينَ وَاجْعَلْنِي مِنَ الْمُتَطَهِّرِينَ. سُبْحَانَكَ اللَّهُمَّ وَبِحَمْدِكَ، أَشْهَدُ أَنْ لَا إِلَهَ إِلَّا أَنْتَ، أَسْتَغْفِرُكَ وَأَتُوبُ إِلَيْهِ", count: 1, fadl: "الذكر بعد الفراغ من الوضوء" },
       { text: "أَعُوذُ بِاللَّهِ الْعَظِيمِ، وَبِوَجْهِهِ الْكَرِيمِ، وَسُلْطَانِهِ الْقَدِيمِ، مِنَ الشَّيْطَانِ الرَّجِيمِ. بِسْمِ اللَّهِ وَالصَّلَاةُ وَالصَّلَامُ عَلَى رَسُولِ اللَّهِ، اللَّهُمَّ افْتَحْ لِي أَبْوَابَ رَحْمَتِكَ", count: 1, fadl: "دعاء دخول المسجد — يبدأ برجله اليمنى" },
       { text: "بِسْمِ اللَّهِ وَالصَّلَاةُ وَالصَّلَامُ عَلَى رَسُولِ اللَّهِ، اللَّهُمَّ إِنِّي أَسْأَلُكَ مِنْ فَضْلِكَ، اللَّهُمَّ اعْصِمْنِي مِنَ الشَّيْطَانِ الرَّجِيمِ", count: 1, fadl: "دعاء الخروج من المسجد — يبدأ برجله اليسرى" },
       { text: "اللَّهُمَّ إِنِّي عَبْدُكَ، ابْنُ عَبْدِكَ، ابْنُ أَمَتِكَ، نَاصِيَتِي بِيَدِكَ، مَاضٍ فِيَّ حُكْمُكَ، عَدْلٌ فِيَّ قَضَاؤُكَ، أَسْأَلُكَ بِكُلِّ اسْمٍ هُوَ لَكَ، سَمَّيْتَ بِهِ نَفْسَكَ، أَوْ أَنْزَلْتَهُ فِي كِتَابِكَ، أَوْ عَلَّمْتَهُ أَحَدًا مِنْ خَلْقِكَ، أَوِ اسْتَأْثَرْتَ بِهِ فِي عِلْمِ الْغَيْبِ عِنْدَكَ، أَنْ تَجْعَلَ الْقُرْآنَ رَبِيعَ قَلْبِي، وَنُورَ صَدْرِي، وَجَلَاءَ حُزْنِي، وَذَهَابَ هَمِّي. اللَّهُمَّ إِنِّي أَعُوذُ بِكَ مِنَ الْهَمِّ وَالْحَزَنِ، وَالْعَجْزِ وَالْكَسَلِ، وَالْبُخْلِ وَالْجُبْنِ، وَضَلَعِ الدَّيْنِ وَغَلَبَةِ الرِّجَالِ", count: 1, fadl: "دعاء الهمّ والحزن" },
       { text: "بِسْمِ اللَّهِ، فَإِنْ نَسِيَ فِي أَوَّلِهِ فَلْيَقُلْ: بِسْمِ اللَّهِ فِي أَوَّلِهِ وَآخِرِهِ", count: 1, fadl: "الدعاء قبل الطعام" },
       { text: "الْحَمْدُ لِلَّهِ الَّذِي أَطْعَمَنِي هَذَا، وَرَزَقَنِيهِ، مِنْ غَيْرِ حَوْلٍ مِنِّي وَلَا قُوَّةٍ", count: 1, fadl: "الدعاء عند الفراغ من الطعام" },
       { text: "أَعُوذُ بِاللَّهِ مِنَ الشَّيْطَانِ الرَّجِيمِ", count: 1, fadl: "دعاء الغضب" },
-      { text: "اللَّهُ أَكْبَرُ، اللَّهُ أَكْبَرُ، اللَّهُ أَكْبَرُ، سُبْحَانَ الَّذِي سَخَّرَ لَنَا هَذَا وَمَا كُنَّا لَهُ مُقْرِنِينَ، وَإِنَّا إِلَى رَبِّنَا لَمُنْقَلِبُونَ. اللَّهُمَّ إِنَّا نَسْأَلُكَ فِي سَفَرِنَا هَذَا الْبِرَّ وَالتَّقْوَى، وَمِنَ الْعَمَلِ مَا تَرْضَى، اللَّهُمَّ هَوِّنْ عَلَيْنَا سَفَرَنَا هَذَا وَاطْوِ عَنَّا بُعْدَهُ، اللَّهُمَّ أَنْتَ الصَّاحِبُ فِي السَّفَرِ، وَالْخَلِيفَةُ فِي الْأَهْلِ، اللَّهُمَّ إِنِّي أَعُوذُ بِكَ مِنْ وَعْثَاءِ السَّفَرِ، وَكَآبَةِ الْمُنْقَلَبِ فِي الْمَالِ وَالْأَهْلِ", count: 1, fadl: "دعاء السفر — وإذا رجع زاد: آيبون تائبون عابدون لربنا حامدون" }
+      { text: "اللَّهُ أَكْبَرُ، اللَّهُ أَكْبَرُ، اللَّهُ أَكْبَرُ، سُبْحَانَ الَّذِي سَخَّرَ لَنَا هَذَا وَمَا كُنَّا لَهُ مُقْرِنِينَ، وَإِنَّا إِلَى رَبِّنَا لَمُنْقَلِبُونَ. اللَّهُمَّ إِنَّا نَسْأَلُكَ فِي سَفَرِنَا هَذَا الْبِرَّ وَالتَّقْوَى، وَمِنَ الْعَمَلِ مَا تَرْضَى، اللَّهُمَّ هَوِّنْ عَلَيْنَا سَفَرَنَا هَذَا وَاطْوِ عَنَّا بُعْدَهُ، اللَّهُمَّ أَنْتَ الصَّاحِبُ فِي السَّفَرِ، وَالْخَلِيفَةُ فِي الْأَهْلِ، اللَّهُمَّ إِنِّي أَعُوذُ بِكَ مِنْ وَعْثَاءِ السَّفَرِ، وَكآبَةِ الْمُنْقَلَبِ فِي الْمَالِ وَالْأَهْلِ", count: 1, fadl: "دعاء السفر — وإذا رجع زاد: آيبون تائبون عابدون لربنا حامدون" }
     ]
   }
 };
@@ -164,19 +164,31 @@ let fontScale = parseFloat(localStorage.getItem("azkar_font_scale")) || 1.18;
 // الثيم (Dark / Light Theme)
 // ============================================================
 const themeToggleBtn = document.getElementById("themeToggleBtn");
-function initTheme() {
-  const savedTheme = localStorage.getItem("site_theme") || "dark";
-  if (savedTheme === "light") {
-    document.body.classList.add("light-theme");
-    if (themeToggleBtn) themeToggleBtn.querySelector('.btn-content').textContent = "☀️";
+function updateThemeIcon(isLight) {
+  if (!themeToggleBtn) return;
+  const content = themeToggleBtn.querySelector('.btn-content');
+  if (isLight) {
+    content.innerHTML = `<svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>`;
+  } else {
+    content.innerHTML = `<svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>`;
   }
 }
+
+function initTheme() {
+  const savedTheme = localStorage.getItem("site_theme") || "dark";
+  const isLight = savedTheme === "light";
+  if (isLight) {
+    document.body.classList.add("light-theme");
+  }
+  updateThemeIcon(isLight);
+}
+
 if (themeToggleBtn) {
   themeToggleBtn.addEventListener("click", () => {
     document.body.classList.toggle("light-theme");
     const isLight = document.body.classList.contains("light-theme");
     localStorage.setItem("site_theme", isLight ? "light" : "dark");
-    themeToggleBtn.querySelector('.btn-content').textContent = isLight ? "☀️" : "🌙";
+    updateThemeIcon(isLight);
   });
 }
 initTheme();
@@ -221,7 +233,7 @@ function renderCategory(cat) {
   const data = azkarData[cat];
   catTitle.textContent = data.title;
   catDesc.textContent = data.desc;
-  catIcon.textContent = data.icon;
+  catIcon.innerHTML = data.icon;
   azkarList.innerHTML = "";
 
   data.items.forEach((item, idx) => {
@@ -240,7 +252,10 @@ function renderCategory(cat) {
             <span class="btn-content">عدّ الذكر <span class="count-badge">${done} / ${item.count}</span></span>
           </button>
           <button class="copy-btn" data-idx="${idx}" title="نسخ الذكر">
-            <span class="btn-content">📋 نسخ</span>
+            <span class="btn-content">
+              <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+              نسخ
+            </span>
           </button>
         </div>
         <div class="mini-beads">${renderMiniBeads(item.count, done)}</div>
@@ -319,8 +334,6 @@ azkarList.addEventListener("click", (e) => {
     done = done >= item.count ? 0 : done + 1;
     setItemProgress(currentCat, idx, done);
     if (navigator.vibrate) navigator.vibrate(15);
-    // Only the tapped card + progress bar are updated - rebuilding the entire
-    // list (15-20+ cards) on every single tap was the main cause of lag.
     updateCardUI(idx, item, done);
     updateProgressBar();
     return;
@@ -332,9 +345,12 @@ azkarList.addEventListener("click", (e) => {
     const item = azkarData[currentCat].items[idx];
     let textToCopy = item.text + (item.fadl ? `\n\n📌 الفضل: ${item.fadl}` : "");
     navigator.clipboard.writeText(textToCopy).then(() => {
-      copyBtn.querySelector('.btn-content').innerHTML = "✓ تم النسخ";
+      copyBtn.querySelector('.btn-content').innerHTML = `<svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> تم النسخ`;
       copyBtn.classList.add("copied");
-      setTimeout(() => { copyBtn.querySelector('.btn-content').innerHTML = "📋 نسخ"; copyBtn.classList.remove("copied"); }, 1500);
+      setTimeout(() => { 
+        copyBtn.querySelector('.btn-content').innerHTML = `<svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg> نسخ`; 
+        copyBtn.classList.remove("copied"); 
+      }, 1500);
     });
   }
 });
