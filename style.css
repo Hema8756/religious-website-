@@ -233,7 +233,7 @@ body {
 
 /* ============ Azkar List ============ */
 .azkar-list { list-style: none; display: flex; flex-direction: column; gap: 18px; }
-.zikr-card { background: var(--glass-card); border: 1px solid var(--glass-border); border-radius: var(--radius-md); padding: 20px; position: relative; transition: all 0.25s ease; content-visibility: auto; contain-intrinsic-size: 0 260px; }
+.zikr-card { background: var(--glass-card); border: 1px solid var(--glass-border); border-radius: var(--radius-md); padding: 20px; position: relative; transition: all 0.25s ease; }
 .zikr-card:hover { background: var(--glass-card-hover); border-color: var(--glass-border-bright); }
 .zikr-card.done { border-color: var(--neon-cyan); background: var(--glass-card-done); }
 .zikr-index { position: absolute; top: -10px; right: 16px; background: var(--bg-dark-1); border: 1px solid var(--neon-blue); color: var(--neon-blue); font-size: 0.7rem; font-weight: 700; padding: 2px 10px; border-radius: 999px; }
