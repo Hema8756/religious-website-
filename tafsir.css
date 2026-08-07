@@ -1,0 +1,301 @@
+/* ================================================================
+   قسم تفسير القرآن الكريم — تنسيقات متوافقة مع نظام التصميم العام
+   ================================================================ */
+
+.tafsir-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border-gold);
+  border-radius: var(--radius-xl);
+  padding: 20px;
+  box-shadow: var(--shadow-card);
+  margin-bottom: 14px;
+}
+
+.tafsir-card h3 {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  color: var(--gold-pale);
+  margin-bottom: 12px;
+}
+
+/* ---------- تفسير اليوم ---------- */
+.daily-card {
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.daily-card .ornament {
+  color: var(--gold-bright);
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  opacity: 0.85;
+  margin-bottom: 6px;
+}
+.daily-card h2 {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  color: var(--gold-pale);
+  margin-bottom: 10px;
+}
+.daily-ayah-text {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  line-height: 2.1;
+  color: var(--ink);
+  margin-bottom: 6px;
+}
+.daily-ayah-ref {
+  font-size: 0.78rem;
+  color: var(--ink-faint);
+  margin-bottom: 16px;
+}
+.daily-listen-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 11px 22px;
+  background: linear-gradient(120deg, var(--gold), var(--gold-deep));
+  color: var(--void-1);
+  border: none;
+  border-radius: var(--radius-md);
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: transform 0.2s var(--ease), box-shadow 0.3s var(--ease);
+}
+body.light-theme .daily-listen-btn { color: #221a06; }
+.daily-listen-btn:hover { box-shadow: var(--glow-gold); transform: translateY(-2px); }
+
+/* ---------- بحث سريع ---------- */
+.tafsir-quick-search {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.tafsir-quick-search input {
+  flex: 1;
+  padding: 11px 16px;
+  background: var(--panel);
+  border: 1px solid var(--border-gold);
+  border-radius: var(--radius-md);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  outline: none;
+}
+.tafsir-quick-search input:focus { border-color: var(--border-gold-bright); box-shadow: var(--glow-gold); }
+
+/* ---------- اختيار المفسر / السورة / الآية ---------- */
+.tafsir-field-label {
+  display: block;
+  font-size: 0.8rem;
+  color: var(--gold);
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+.tafsir-status { font-size: 0.75rem; color: var(--gold); text-align: center; margin-top: 6px; min-height: 1em; }
+
+.tafsir-row { display: flex; gap: 10px; margin-top: 10px; }
+.tafsir-row > * { flex: 1; min-width: 0; }
+
+/* ---------- أزرار العمليات ---------- */
+.tafsir-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+.tafsir-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  flex: 1 1 auto;
+  padding: 11px 14px;
+  background: var(--panel);
+  border: 1px solid var(--border-gold);
+  border-radius: var(--radius-md);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.25s var(--ease);
+  white-space: nowrap;
+}
+.tafsir-btn:hover:not(:disabled) { border-color: var(--border-gold-bright); box-shadow: var(--glow-gold); }
+.tafsir-btn:disabled { opacity: 0.35; cursor: not-allowed; }
+.tafsir-btn.primary {
+  background: linear-gradient(120deg, var(--gold), var(--gold-deep));
+  color: var(--void-1);
+  border-color: transparent;
+  flex: 1 1 100%;
+}
+body.light-theme .tafsir-btn.primary { color: #221a06; }
+.tafsir-btn.danger:hover:not(:disabled) { border-color: #b5504a; color: #d3746c; }
+
+/* ---------- منطقة النتيجة ---------- */
+.tafsir-result-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border-gold);
+  border-radius: var(--radius-xl);
+  padding: 20px;
+  box-shadow: var(--shadow-deep);
+  margin-bottom: 14px;
+}
+
+.tafsir-ayah-box {
+  background: var(--panel);
+  border-inline-start: 3px solid var(--gold);
+  border-radius: var(--radius-md);
+  padding: 14px 16px;
+  margin-bottom: 16px;
+}
+.tafsir-ayah-box .ayah-txt {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  line-height: 2.1;
+  color: var(--ink);
+}
+.tafsir-ayah-box .ayah-ref {
+  font-size: 0.76rem;
+  color: var(--gold);
+  margin-top: 8px;
+}
+
+.tafsir-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 26px 10px;
+  color: var(--ink-muted);
+  font-size: 0.85rem;
+}
+
+.spinner {
+  width: 36px;
+  height: 36px;
+  border: 3px solid var(--border-gold);
+  border-top-color: var(--gold-bright);
+  border-radius: 50%;
+  animation: tafsirSpin 0.8s linear infinite;
+}
+@keyframes tafsirSpin { to { transform: rotate(360deg); } }
+
+.tafsir-error {
+  text-align: center;
+  padding: 20px 10px;
+  color: #d3746c;
+  font-size: 0.88rem;
+  line-height: 1.8;
+}
+.tafsir-error .tafsir-btn { margin-top: 12px; display: inline-flex; }
+
+/* ---------- مشغل الصوت ---------- */
+.tafsir-audio-list { display: flex; flex-direction: column; gap: 12px; }
+
+.tafsir-audio-item {
+  background: var(--panel);
+  border: 1px solid var(--border-gold);
+  border-radius: var(--radius-md);
+  padding: 14px;
+}
+.tafsir-audio-title {
+  font-size: 0.85rem;
+  color: var(--gold-pale);
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+.tafsir-audio-controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.tafsir-audio-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  background: var(--panel-solid);
+  border: 1px solid var(--border-gold);
+  border-radius: 50%;
+  color: var(--ink);
+  font-size: 1rem;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.25s var(--ease);
+  flex-shrink: 0;
+}
+.tafsir-audio-btn:hover { border-color: var(--border-gold-bright); box-shadow: var(--glow-gold); color: var(--gold-bright); }
+.tafsir-audio-btn.is-playing { background: linear-gradient(120deg, var(--gold), var(--gold-deep)); color: var(--void-1); border-color: transparent; }
+body.light-theme .tafsir-audio-btn.is-playing { color: #221a06; }
+
+.tafsir-volume-wrap { display: flex; align-items: center; gap: 6px; flex: 1 1 100px; min-width: 90px; }
+.tafsir-volume-wrap span { font-size: 0.9rem; }
+.tafsir-volume {
+  flex: 1;
+  accent-color: var(--gold);
+  cursor: pointer;
+}
+
+.tafsir-audio-progress {
+  width: 100%;
+  height: 4px;
+  border-radius: 999px;
+  margin-top: 10px;
+  accent-color: var(--gold);
+  cursor: pointer;
+}
+.tafsir-audio-time { font-size: 0.72rem; color: var(--ink-faint); margin-top: 4px; text-align: center; }
+
+.tafsir-result-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border-gold);
+}
+.tafsir-result-actions .tafsir-btn { flex: 1 1 auto; padding: 9px 10px; font-size: 0.78rem; }
+.tafsir-feedback { font-size: 0.76rem; color: var(--gold-bright); text-align: center; margin-top: 8px; min-height: 1em; }
+
+/* ---------- آخر عمليات البحث / المفضلة ---------- */
+.tafsir-chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.tafsir-chip {
+  background: var(--panel);
+  border: 1px solid var(--border-gold);
+  color: var(--ink-muted);
+  border-radius: 999px;
+  padding: 7px 14px;
+  font-family: var(--font-body);
+  font-size: 0.76rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.25s var(--ease);
+}
+.tafsir-chip:hover { border-color: var(--border-gold-bright); color: var(--gold-bright); box-shadow: var(--glow-gold); }
+
+.tafsir-fav-list { display: flex; flex-direction: column; gap: 8px; }
+.tafsir-fav-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  background: var(--panel);
+  border: 1px solid var(--border-gold);
+  border-radius: var(--radius-md);
+  padding: 10px 14px;
+}
+.tafsir-fav-item .fav-info { font-size: 0.82rem; color: var(--ink); cursor: pointer; flex: 1; }
+.tafsir-fav-item .fav-info .fav-sub { display: block; font-size: 0.72rem; color: var(--ink-faint); margin-top: 2px; }
+.tafsir-fav-item .fav-remove { background: none; border: none; color: var(--ink-faint); cursor: pointer; font-size: 1rem; flex-shrink: 0; }
+.tafsir-fav-item .fav-remove:hover { color: #d3746c; }
+
+@media (max-width: 480px) {
+  .tafsir-row { flex-direction: column; }
+  .tafsir-audio-btn { width: 34px; height: 34px; }
+}

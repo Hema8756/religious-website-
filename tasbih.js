@@ -1,6 +1,3 @@
-// ============================================================
-// tasbih.js — منطق صفحة المسبحة الإلكترونية
-// ============================================================
 (function () {
   "use strict";
 
@@ -39,9 +36,6 @@
     tasbihCount = 0; tasbihRound = 1; updateTasbihDisplay();
   });
 
-  // ---------------------------------------------------------
-  // اختيار الذكر (البطاقات الجاهزة + المخصّصة)
-  // ---------------------------------------------------------
   function setActiveChip(chip) {
     dhikrCards.querySelectorAll(".dhikr-chip").forEach(function (c) { c.classList.remove("active"); });
     chip.classList.add("active");
@@ -94,9 +88,6 @@
     input.value = "";
   });
 
-  // ---------------------------------------------------------
-  // سحب الخرزة (فأرة + لمس)
-  // ---------------------------------------------------------
   var dragging = false, startY = 0, trackTop = 16;
 
   function onDragStart(y) { dragging = true; startY = y; dragBead.classList.remove("snap-back"); }

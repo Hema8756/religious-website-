@@ -54,10 +54,13 @@
   </div>
 
   <div class="quran-select-card audio-player-container">
+    <label style="font-size:0.8rem; color:var(--ink-muted); margin-bottom:4px;">اختر القارئ (أكثر من 100 قارئ من MP3Quran):</label>
+    <input type="text" id="reciterSearchInput" class="quran-search-input" placeholder="ابحث باسم القارئ..." style="margin-bottom:8px;" />
     <select id="reciterSelect" class="quran-select">
-      <option value="">جاري تحميل القراء...</option>
+      <option value="">جاري تحميل القراء من API...</option>
     </select>
     <audio id="quranAudio" controls class="quran-audio-element"></audio>
+    <div id="reciterStatus" style="font-size:0.75rem; color:var(--gold); text-align:center; margin-top:4px;"></div>
   </div>
 
   <div class="surah-view-card" id="surahViewCard" style="display:none;">
@@ -75,21 +78,15 @@
 
     <div class="surah-view-actions">
       <button class="pager-btn" id="backToIndexBtn">
-        <span class="btn-content">
-          <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
-          العودة للفهرس
-        </span>
+        <span class="btn-content">العودة للفهرس</span>
       </button>
       <button class="reload-audio-btn" id="reloadAudioBtn">
-        <span class="btn-content">
-          <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 4v6h-6"></path><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"></path></svg>
-          إعادة التحميل
-        </span>
+        <span class="btn-content">إعادة تحميل الصوت</span>
       </button>
     </div>
   </div>
 
-  <p class="empty-state" id="quranEmptyState">اختر سورة من القائمة أعلاه لعرض آياتها والاستماع إليها.</p>
+  <p class="empty-state" id="quranEmptyState">اختر سورة وقارئاً للاستماع إلى التلاوة مباشرة.</p>
 
 </main>
 
@@ -99,5 +96,6 @@
 
 <script src="common.js"></script>
 <script src="quran.js"></script>
+<script src="quran-app.js"></script>
 </body>
 </html>

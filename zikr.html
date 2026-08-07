@@ -21,10 +21,7 @@
       </span>
     </button>
     <a href="index.html" class="home-btn">
-      <span class="btn-content">
-        <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
-        الرئيسية
-      </span>
+      <span class="btn-content">الرئيسية</span>
     </a>
   </div>
   <div class="arch">
@@ -33,7 +30,6 @@
     </div>
   </div>
   <h1 class="site-title">نُورُ الْإِيمَانِ</h1>
-  <p class="site-sub">الأذكار والقرآن الكريم — اذكر الله يذكرك</p>
 </header>
 
 <nav class="tabs" id="tabs">
@@ -52,24 +48,17 @@
       <h2 id="catTitle">…</h2>
       <p id="catDesc" class="cat-desc"></p>
     </div>
-    <button class="reset-cat-btn icon-btn" id="resetCatBtn" title="إعادة ضبط عدّادات هذا القسم">
-      <span class="btn-content">
-        <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 4v6h-6"></path><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"></path></svg>
-        إعادة ضبط
-      </span>
+    <button class="reset-cat-btn icon-btn" id="resetCatBtn" title="إعادة ضبط">
+      <span class="btn-content">إعادة ضبط</span>
     </button>
   </section>
 
   <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
 
   <div class="zikr-single-meta">
-    <button class="pager-btn" id="prevZikrBtn" title="الذكر السابق">
-      <span class="btn-content">‹ السابق</span>
-    </button>
+    <button class="pager-btn" id="prevZikrBtn">‹ السابق</button>
     <span id="zikrIndexLabel">1 / 1</span>
-    <button class="pager-btn" id="nextZikrBtn" title="الذكر التالي">
-      <span class="btn-content">التالي ›</span>
-    </button>
+    <button class="pager-btn" id="nextZikrBtn">التالي ›</button>
   </div>
 
   <div class="zikr-single-wrap" id="zikrWrap">
@@ -78,17 +67,12 @@
   </div>
 
   <div class="zikr-single-footer">
-    <button class="copy-btn" id="copyZikrBtn" title="نسخ الذكر">
-      <span class="btn-content">
-        <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-        نسخ
-      </span>
-    </button>
+    <button class="copy-btn" id="copyZikrBtn">نسخ</button>
     <div class="font-controls">
       <span>حجم الخط:</span>
-      <button id="decFontBtn" class="font-btn"><span class="btn-content">A-</span></button>
-      <button id="resetFontBtn" class="font-btn"><span class="btn-content">إعادة</span></button>
-      <button id="incFontBtn" class="font-btn"><span class="btn-content">A+</span></button>
+      <button id="decFontBtn" class="font-btn">A-</button>
+      <button id="resetFontBtn" class="font-btn">إعادة</button>
+      <button id="incFontBtn" class="font-btn">A+</button>
     </div>
   </div>
 </main>
@@ -98,6 +82,7 @@
 </footer>
 
 <script src="common.js"></script>
+<script src="zikr-data.js"></script>
 <script src="zikr.js"></script>
 </body>
 </html>

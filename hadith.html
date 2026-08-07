@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>الأحاديث النبوية — نُورُ الْإِيمَانِ</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Tajawal:wght@300;400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="hadith.css">
+</head>
+<body>
+
+<div class="pattern-overlay"></div>
+
+<header class="site-header">
+  <div class="top-bar-tools">
+    <button id="themeToggleBtn" class="theme-btn" title="تبديل الثيم">
+      <span class="btn-content">
+        <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+      </span>
+    </button>
+    <a href="index.html" class="home-btn">
+      <span class="btn-content">
+        <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+        الرئيسية
+      </span>
+    </a>
+  </div>
+  <div class="arch">
+    <div class="arch-inner">
+      <svg class="crescent-svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a9.93 9.93 0 0 0-7.38 3.32A9.99 9.99 0 0 0 12 22a9.94 9.94 0 0 0 7.38-3.32A10 10 0 0 1 12 2z"/></svg>
+    </div>
+  </div>
+  <h1 class="site-title">الأحاديث النبوية</h1>
+  <p class="site-sub">البحث والتحقق من صحة الأحاديث عبر موسوعة الدرر السنية</p>
+</header>
+
+<main id="hadithApp">
+
+  <!-- بطاقة البحث الرئيسية -->
+  <div class="hadith-card-main">
+    <div class="ornament">✦</div>
+    <h2 class="hadith-card-title">البحث في السنة النبوية</h2>
+    <p class="hadith-card-sub">اكتب كلمة أو نصاً من الحديث للتحقق من صحته وشرحه مباشرة من موسوعة <strong>الدرر السنية</strong></p>
+    
+    <form action="https://dorar.net/hadith/search" target="_blank" method="get" id="dorarForm" class="hadith-form">
+      <input type="hidden" name="st" value="w">
+      
+      <div class="hadith-input-group">
+        <label for="hadithQueryInput" class="hadith-label">نص الحديث أو كلمة منه:</label>
+        <div class="hadith-input-wrapper">
+          <input dir="rtl" type="text" name="q" id="hadithQueryInput" class="hadith-input" placeholder="مثال: إنما الأعمال بالنيات..." required autocomplete="off">
+          <button type="submit" id="hadithSubmitBtn" class="hadith-submit-btn">
+            <span class="btn-content">
+              <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+              بحث
+            </span>
+          </button>
+        </div>
+      </div>
+    </form>
+
+    <!-- اقتراحات سريعة للبحث -->
+    <div class="quick-search">
+      <span class="quick-label">أحاديث شائعة للبحث:</span>
+      <div class="quick-chips">
+        <button class="quick-chip" data-query="إنما الأعمال بالنيات">إنما الأعمال بالنيات</button>
+        <button class="quick-chip" data-query="من سلك طريقا يبتغي فيه علما">طلب العلم</button>
+        <button class="quick-chip" data-query="من كان يؤمن بالله واليوم الآخر">الكلم الطيّب</button>
+        <button class="quick-chip" data-query="لا يؤمن أحدكم حتى يحب لأخيه">محبة الخير للغير</button>
+      </div>
+    </div>
+
+    <!-- تنبيه مصدري -->
+    <p class="hadith-footer-note">
+      تُفتح النتائج والدراسات الأسانيدية معتمدة مباشرة من <a href="https://dorar.net" target="_blank" rel="noopener">موقع الدرر السنية (dorar.net)</a>
+    </p>
+  </div>
+
+  <!-- واجهة التحميل المنبثقة الناعمة -->
+  <div class="hadith-overlay" id="hadithOverlay">
+    <div class="hadith-modal">
+      <div class="spinner"></div>
+      <h3>جاري تحويلك إلى موسوعة الدرر السنية...</h3>
+      <p>يتم فتح نتائج البحث الموثوقة الآن</p>
+    </div>
+  </div>
+
+</main>
+
+<footer class="site-footer">
+  <p>«مَنْ سَلَكَ طَرِيقًا يَلْتَمِسُ فِيهِ عِلْمًا سَهَّلَ اللَّهُ لَهُ بِهِ طَرِيقًا إِلَى الْجَنَّةِ»</p>
+</footer>
+
+<script src="common.js"></script>
+<script src="hadith.js"></script>
+</body>
+</html>

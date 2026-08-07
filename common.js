@@ -1,13 +1,6 @@
-// ============================================================
-// common.js — أدوات مشتركة بين كل صفحات الموقع
-// (الثيم، قاعدة IndexedDB، تخزين الخطوط للعمل بدون إنترنت، نافذة المطور)
-// ============================================================
 (function () {
   "use strict";
 
-  // ---------------------------------------------------------
-  // 1) الثيم (ليلي / نهاري)
-  // ---------------------------------------------------------
   var themeToggleBtn = document.getElementById("themeToggleBtn");
 
   function updateThemeIcon(isLight) {
@@ -36,9 +29,6 @@
   }
   initTheme();
 
-  // ---------------------------------------------------------
-  // 2) نافذة "عن المطور" (تعمل إن وُجد الزر/النافذة في الصفحة)
-  // ---------------------------------------------------------
   var developerBtn = document.getElementById("developerBtn") || document.getElementById("developerCard");
   var devModalOverlay = document.getElementById("devModalOverlay");
   var closeDevModal = document.getElementById("closeDevModal");
@@ -57,23 +47,29 @@
     });
   }
 
-  // ---------------------------------------------------------
-  // 3) IndexedDB — قاعدة بيانات عامة للموقع
-  //    مخازن: fonts (تخزين الخطوط) ، customAzkar (أذكار المستخدم في المسبحة)
-  // ---------------------------------------------------------
+  // IndexedDB — تحديث الإصدار والمخازن
   var DB_NAME = "noor_al_iman_db";
-  var DB_VERSION = 1;
+  var DB_VERSION = 3;
   var dbPromise = null;
 
   function openDB() {
     if (dbPromise) return dbPromise;
     dbPromise = new Promise(function (resolve, reject) {
-      if (!window.indexedDB) { reject(new Error("لا يدعم هذا المتصفح IndexedDB")); return; }
+      if (!window.indexedDB) { reject(new Error("IndexedDB Not Supported")); return; }
       var req = indexedDB.open(DB_NAME, DB_VERSION);
       req.onupgradeneeded = function (e) {
         var db = e.target.result;
         if (!db.objectStoreNames.contains("fonts")) db.createObjectStore("fonts");
         if (!db.objectStoreNames.contains("customAzkar")) db.createObjectStore("customAzkar", { keyPath: "id" });
+        if (!db.objectStoreNames.contains("reciters")) db.createObjectStore("reciters");
+        if (!db.objectStoreNames.contains("hadithFavs")) db.createObjectStore("hadithFavs", { keyPath: "id" });
+        if (!db.objectStoreNames.contains("hadithHistory")) db.createObjectStore("hadithHistory", { keyPath: "query" });
+        // مخازن قسم التفسير
+        if (!db.objectStoreNames.contains("tafasirList")) db.createObjectStore("tafasirList");
+        if (!db.objectStoreNames.contains("tafsirFavs")) db.createObjectStore("tafsirFavs", { keyPath: "id" });
+        if (!db.objectStoreNames.contains("tafsirHistory")) db.createObjectStore("tafsirHistory", { keyPath: "id" });
+        if (!db.objectStoreNames.contains("tafsirState")) db.createObjectStore("tafsirState");
+        if (!db.objectStoreNames.contains("tafsirCache")) db.createObjectStore("tafsirCache", { keyPath: "id" });
       };
       req.onsuccess = function (e) { resolve(e.target.result); };
       req.onerror = function () { reject(req.error); };
@@ -125,73 +121,9 @@
     });
   }
 
-  // نعرضها للاستخدام في ملفات الصفحات الأخرى
   window.NoorDB = { get: idbGet, set: idbSet, del: idbDelete, getAll: idbGetAll };
 
-  // ---------------------------------------------------------
-  // 4) تخزين الخطوط داخل IndexedDB للعمل بدون إنترنت
-  //    أول زيارة: تُجلب الخطوط من الشبكة وتُحفظ كملفات (Blob).
-  //    الزيارات التالية: تُقرأ من IndexedDB مباشرة دون أي طلب شبكة.
-  // ---------------------------------------------------------
-  var FONTS_CSS_URL = "https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Tajawal:wght@300;400;700&display=swap";
-  var FONTS_MANIFEST_KEY = "manifest-v1";
-
-  function injectFontFace(family, weight, blob) {
-    var url = URL.createObjectURL(blob);
-    var style = document.createElement("style");
-    style.textContent =
-      "@font-face{font-family:'" + family + "';font-weight:" + weight +
-      ";font-display:swap;src:url('" + url + "') format('woff2');}";
-    document.head.appendChild(style);
-  }
-
-  // يحمّل الخطوط من IndexedDB إن كانت محفوظة مسبقًا؛ وإلا يجلبها من الشبكة مرة واحدة فقط ويخزّنها
-  function loadFontsWithCache() {
-    idbGet("fonts", FONTS_MANIFEST_KEY).then(function (manifest) {
-      if (manifest && manifest.faces && manifest.faces.length) {
-        // مُخزّنة مسبقًا: اقرأ كل ملف خط من IndexedDB مباشرة (بدون أي طلب شبكة)
-        return Promise.all(manifest.faces.map(function (face) {
-          return idbGet("fonts", face.blobKey).then(function (blob) {
-            if (blob) injectFontFace(face.family, face.weight, blob);
-          });
-        }));
-      }
-      return fetchAndCacheFonts();
-    }).catch(function () {
-      // تجاهل بصمت: ستبقى خطوط <link> العادية في head تعمل عند توفر الإنترنت
-    });
-  }
-
-  function fetchAndCacheFonts() {
-    return fetch(FONTS_CSS_URL).then(function (res) { return res.text(); }).then(function (cssText) {
-      var regex = /font-family:\s*'([^']+)';\s*font-style:\s*normal;\s*font-weight:\s*(\d+);[\s\S]*?src:\s*url\(([^)]+)\)\s*format\('woff2'\);/g;
-      var match, idx = 0, jobs = [], faces = [];
-      while ((match = regex.exec(cssText)) !== null) {
-        (function (family, weight, url, blobKey) {
-          jobs.push(
-            fetch(url).then(function (r) { return r.blob(); }).then(function (blob) {
-              injectFontFace(family, weight, blob);
-              faces.push({ family: family, weight: weight, blobKey: blobKey });
-              return idbSet("fonts", blobKey, blob);
-            }).catch(function () {})
-          );
-        })(match[1], match[2], match[3], match[1] + "-" + match[2] + "-" + (idx++));
-      }
-      return Promise.all(jobs).then(function () {
-        if (faces.length) idbSet("fonts", FONTS_MANIFEST_KEY, { faces: faces });
-      });
-    });
-  }
-
-  loadFontsWithCache();
-
-  // ---------------------------------------------------------
-  // 5) تأكيد بديل لـ window.confirm داخل تطبيقات WebView
-  // ---------------------------------------------------------
   window.noorConfirm = function (message, onYes) {
-    if (window.Android) {
-      // في حال توفر جسر أندرويد مخصص لاحقًا
-    }
     if (confirm(message)) onYes();
   };
 })();

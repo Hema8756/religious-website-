@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>تفسير القرآن الكريم — نُورُ الْإِيمَانِ</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Tajawal:wght@300;400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="tafsir.css">
+</head>
+<body>
+
+<div class="pattern-overlay"></div>
+
+<header class="site-header">
+  <div class="top-bar-tools">
+    <button id="themeToggleBtn" class="theme-btn" title="تبديل الثيم">
+      <span class="btn-content">
+        <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+      </span>
+    </button>
+    <a href="index.html" class="home-btn">
+      <span class="btn-content">
+        <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+        الرئيسية
+      </span>
+    </a>
+  </div>
+  <div class="arch">
+    <div class="arch-inner">
+      <svg class="crescent-svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a9.93 9.93 0 0 0-7.38 3.32A9.99 9.99 0 0 0 12 22a9.94 9.94 0 0 0 7.38-3.32A10 10 0 0 1 12 2z"/></svg>
+    </div>
+  </div>
+  <h1 class="site-title">تفسير القرآن الكريم</h1>
+  <p class="site-sub">تفسير صوتي موثّق من عشرات المفسرين عبر MP3Quran</p>
+</header>
+
+<main id="tafsirApp">
+
+  <!-- تفسير اليوم -->
+  <div class="tafsir-card daily-card" id="dailyTafsirCard">
+    <div class="ornament">✦</div>
+    <h2>تفسير اليوم</h2>
+    <p class="daily-ayah-text" id="dailyAyahText">جارٍ التحضير...</p>
+    <p class="daily-ayah-ref" id="dailyAyahRef"></p>
+    <button class="daily-listen-btn" id="dailyListenBtn">
+      <span class="btn-content">🎧 استمع لتفسير هذه الآية</span>
+    </button>
+  </div>
+
+  <!-- بحث سريع -->
+  <div class="tafsir-card">
+    <label class="tafsir-field-label" for="tafsirQuickSearch">بحث سريع عن مفسّر أو سورة</label>
+    <div class="tafsir-quick-search">
+      <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+      <input type="text" id="tafsirQuickSearch" placeholder="مثال: ابن كثير، البقرة..." autocomplete="off">
+    </div>
+  </div>
+
+  <!-- اختيار المفسر -->
+  <div class="tafsir-card">
+    <label class="tafsir-field-label" for="tafsirSelect">اختر المفسّر</label>
+    <select id="tafsirSelect" class="quran-select">
+      <option value="">جاري تحميل قائمة المفسرين من API...</option>
+    </select>
+    <div id="tafsirListStatus" class="tafsir-status"></div>
+  </div>
+
+  <!-- اختيار السورة والآية -->
+  <div class="tafsir-card">
+    <label class="tafsir-field-label">اختر السورة والآية</label>
+    <button class="surah-dropdown-toggle" id="tafsirSurahToggle">
+      <span>
+        <span class="surah-current-name" id="tafsirSurahName">اختر سورة…</span><br>
+        <span class="surah-current-info" id="tafsirSurahInfo"></span>
+      </span>
+      <span class="chev">
+        <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+      </span>
+    </button>
+    <div id="tafsirSurahDropdown" class="surah-dropdown-list"></div>
+
+    <div class="tafsir-row">
+      <select id="tafsirAyahSelect" class="quran-select">
+        <option value="">اختر آية…</option>
+      </select>
+    </div>
+  </div>
+
+  <!-- أزرار العمليات -->
+  <div class="tafsir-actions">
+    <button class="tafsir-btn primary" id="showTafsirBtn">
+      <span class="btn-content">📖 عرض التفسير</span>
+    </button>
+    <button class="tafsir-btn" id="prevAyahBtn">‹ الآية السابقة</button>
+    <button class="tafsir-btn" id="nextAyahBtn">الآية التالية ›</button>
+  </div>
+
+  <!-- منطقة النتيجة -->
+  <div class="tafsir-result-card" id="tafsirResultCard" style="display:none;">
+
+    <div class="tafsir-ayah-box" id="tafsirAyahBox" style="display:none;">
+      <p class="ayah-txt" id="tafsirAyahTxt"></p>
+      <p class="ayah-ref" id="tafsirAyahRefTxt"></p>
+    </div>
+
+    <div class="tafsir-loading" id="tafsirLoading" style="display:none;">
+      <div class="spinner"></div>
+      <span>جاري تحميل التفسير من MP3Quran...</span>
+    </div>
+
+    <div class="tafsir-error" id="tafsirError" style="display:none;"></div>
+
+    <div class="tafsir-audio-list" id="tafsirAudioList"></div>
+
+    <div class="tafsir-result-actions" id="tafsirResultActions" style="display:none;">
+      <button class="tafsir-btn" id="copyTafsirBtn">📋 نسخ</button>
+      <button class="tafsir-btn" id="shareTafsirBtn">🔗 مشاركة</button>
+      <button class="tafsir-btn" id="favTafsirBtn">⭐ إضافة للمفضلة</button>
+      <button class="tafsir-btn danger" id="unfavTafsirBtn" style="display:none;">🗑 إزالة من المفضلة</button>
+    </div>
+    <p class="tafsir-feedback" id="tafsirFeedback"></p>
+  </div>
+
+  <p class="empty-state" id="tafsirEmptyState">اختر مفسّراً وسورة وآية ثم اضغط «عرض التفسير» للاستماع مباشرة.</p>
+
+  <!-- آخر عمليات البحث -->
+  <div class="tafsir-card" id="tafsirHistoryCard" style="display:none;">
+    <h3>آخر عمليات البحث</h3>
+    <div class="tafsir-chips" id="tafsirHistoryChips"></div>
+  </div>
+
+  <!-- المفضلة -->
+  <div class="tafsir-card" id="tafsirFavCard" style="display:none;">
+    <h3>المفضلة</h3>
+    <div class="tafsir-fav-list" id="tafsirFavList"></div>
+  </div>
+
+</main>
+
+<footer class="site-footer">
+  <p>«وَقُلْ رَّبِّ زِدْنِي عِلْمًا»</p>
+</footer>
+
+<script src="common.js"></script>
+<script src="quran.js"></script>
+<script src="tafsir.js"></script>
+</body>
+</html>
